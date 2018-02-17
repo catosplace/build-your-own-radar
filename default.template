@@ -8,10 +8,10 @@ server {
 # server block for static file serving
 server {
   listen 80;
-  server_name ${SERVER_NAMES};
+  server_name localhost;
   location / {
     root /opt/build-your-own-radar;
-    index index.html;
+    index index.html /index.html?sheetId=1jg5rh0jsZXj21a0xYl4pqe4pD2C_EU2-ZxHRlVKtd9w; 
   }
 
   # custom error page for 404 errors

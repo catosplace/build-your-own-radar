@@ -32,7 +32,11 @@ let plugins = [
         chunks: ['common'],
         inject: 'body',
         filename: 'error.html'
-    })
+    }),
+    new webpack.EnvironmentPlugin([
+        'RADAR_SHEET_ID',
+        'RADAR_SHEET_NAME'
+    ])
 ];
 
 if (isProd) {

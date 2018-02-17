@@ -167,9 +167,24 @@ const GoogleSheetInput = function () {
     
     self.build = function () {
         var domainName = DomainName(window.location.search.substring(1));
-        var queryParams = QueryParams(window.location.search.substring(1));
+	var queryParams;
 
-        if (domainName && queryParams.sheetId.endsWith('csv')) {
+        console.log(process.env.RADAR_SHEET_ID)
+
+	if (process.env.RADAR_SHEET_ID) {
+	    queryParams = {
+	        'sheetId': process.env.RADAR_SHEET_ID,
+		'sheetName': process.env.RADAR_SHEET_NAME
+	    };
+        } else {
+	    queryParams = QueryParams(window.location.search.substring(1));
+	}
+
+	if (queryParams.sheetId) {
+	    var sheet = GoogleSheet(queryParams.sheetId, queryParams.sheetName);
+            sheet.init().build();
+	}
+	else if (domainName && queryParams.sheetId.endsWith('csv')) {
             var sheet = CSVDocument(queryParams.sheetId);
             sheet.init().build();
         }
