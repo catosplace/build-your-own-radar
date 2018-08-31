@@ -6,7 +6,7 @@
   "scripts": {
     "test": "istanbul cover jasmine",
     "dev": "webpack-dev-server --dev --inline",
-    "build": "RADAR_SHEET_ID=1jg5rh0jsZXj21a0xYl4pqe4pD2C_EU2-ZxHRlVKtd9w RADAR_SHEET_NAME='Jan 2018' webpack --prod",
+    "build": "RADAR_SHEET_ID=1jg5rh0jsZXj21a0xYl4pqe4pD2C_EU2-ZxHRlVKtd9w RADAR_SHEET_NAME='Jan 2018' webpack --prod"
   },
   "author": "ThoughtWorks",
   "repository": {

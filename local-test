@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Uncomment this line if you need to build the container
+#docker build -t catosplace/tech-radar .
+
+docker run --rm -d -p 8080:80 -e SERVER_NAMES="localhost 127.0.0.1" catosplace/tech-radar
